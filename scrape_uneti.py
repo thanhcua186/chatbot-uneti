@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -6,14 +7,14 @@ def scrape_uneti():
     res = requests.get(url)
     soup = BeautifulSoup(res.text, "html.parser")
 
-    news = soup.select("h3.post-title a")  # Kiểm tra selector
-    print(f"🔍 Tổng số bài viết tìm thấy: {len(news)}")  # THÊM DÒNG NÀY
+    news = soup.select("h3.post-title a")
+    print(f"🔍 Tổng số bài viết tìm thấy: {len(news)}")
 
     contents = []
     for item in news[:5]:
         title = item.get_text(strip=True)
         link = item['href']
-        print(f"📄 Đang lấy: {title} - {link}")  # THÊM DÒNG NÀY
+        print(f"📄 Đang lấy: {title} - {link}")
 
         try:
             article = requests.get(link)
@@ -24,10 +25,15 @@ def scrape_uneti():
         except Exception as e:
             print(f"⚠️ Lỗi khi lấy bài {title}: {e}")
 
-    # Nếu không có gì được scrape
+    # Tạo thư mục nếu chưa có
+    output_dir = os.path.join(os.path.dirname(__file__), "data")
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Ghi file ra đúng vị trí
+    output_path = os.path.join(output_dir, "thongbao.txt")
     if not contents:
-        print("⚠️ Không lấy được nội dung nào. Có thể cấu trúc HTML đã thay đổi.")
+        print("⚠️ Không lấy được nội dung nào.")
     else:
-        with open("data/thongbao.txt", "w", encoding="utf-8") as f:
+        with open(output_path, "w", encoding="utf-8") as f:
             f.write("\n\n".join(contents))
-        print("✅ Đã cập nhật dữ liệu tuyển sinh mới nhất.")
+        print("✅ Đã ghi dữ liệu vào:", output_path)
