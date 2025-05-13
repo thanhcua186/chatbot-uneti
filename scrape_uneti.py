@@ -1,26 +1,33 @@
 import requests
 from bs4 import BeautifulSoup
 
-def scrape_uneti_news():
+def scrape_uneti():
     url = "https://uneti.edu.vn/category/thong-bao/"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    res = requests.get(url)
+    soup = BeautifulSoup(res.text, "html.parser")
 
-    news_items = soup.select("h3.post-title > a")
-    content_list = []
+    news = soup.select("h3.post-title a")  # Kiểm tra selector
+    print(f"🔍 Tổng số bài viết tìm thấy: {len(news)}")  # THÊM DÒNG NÀY
 
-    for item in news_items[:10]:  # Lấy 5 bài mới nhất
-        title = item.text.strip()
+    contents = []
+    for item in news[:5]:
+        title = item.get_text(strip=True)
         link = item['href']
-        article_res = requests.get(link)
-        article_soup = BeautifulSoup(article_res.text, 'html.parser')
-        paragraphs = article_soup.select("div.td-post-content p")
-        article_text = "\n".join(p.get_text().strip() for p in paragraphs[:5])
-        content_list.append(f"📰 {title}\n{article_text}\n---")
+        print(f"📄 Đang lấy: {title} - {link}")  # THÊM DÒNG NÀY
 
-    full_text = "\n\n".join(content_list)
+        try:
+            article = requests.get(link)
+            article_soup = BeautifulSoup(article.text, "html.parser")
+            body = article_soup.select("div.td-post-content p")
+            content = "\n".join(p.get_text(strip=True) for p in body[:3])
+            contents.append(f"📰 {title}\n{content}\n---")
+        except Exception as e:
+            print(f"⚠️ Lỗi khi lấy bài {title}: {e}")
 
-    with open("data/thongbao.txt", "w", encoding="utf-8") as f:
-        f.write(full_text)
-
-    print("✅ Đã lưu thông báo mới nhất vào file.")
+    # Nếu không có gì được scrape
+    if not contents:
+        print("⚠️ Không lấy được nội dung nào. Có thể cấu trúc HTML đã thay đổi.")
+    else:
+        with open("data/thongbao.txt", "w", encoding="utf-8") as f:
+            f.write("\n\n".join(contents))
+        print("✅ Đã cập nhật dữ liệu tuyển sinh mới nhất.")
