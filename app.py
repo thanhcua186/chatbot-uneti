@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # Khởi tạo client GPT với API key từ biến môi trường
-client = OpenAI(api_key=os.environ.get("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"))
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 # Đọc dữ liệu context (ví dụ: thông tin tuyển sinh UNETI)
 def load_context():
