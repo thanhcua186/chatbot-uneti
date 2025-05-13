@@ -18,15 +18,59 @@
   + Cơ sở Hà Nội: khoảng 5800
   + Cơ sở Nam Định: khoảng 1000
 
-4. Các phương thức tuyển sinh
-1. Xét tuyển thẳng theo quy định của Bộ GD&ĐT
-2. Xét kết quả thi tốt nghiệp THPT năm 2025
-3. Xét học bạ THPT lớp 12
-4. Xét kết quả kỳ thi Đánh giá tư duy của ĐH Bách Khoa Hà Nội
-5. Xét kết quả kỳ thi Đánh giá năng lực của ĐH Quốc gia Hà Nội
+II. Phương thức tuyển sinh
 
-5. Cách tính điểm xét tuyển
-Điểm xét tuyển = (M1×5 + M2×3 + M3×2) × 3/10 + điểm ưu tiên (nếu có) + điểm khuyến khích
+UNETI áp dụng 5 phương thức xét tuyển:
+
+Xét tuyển thẳng:
+
+Áp dụng cho các đối tượng được quy định tại Điều 8 Quy chế tuyển sinh đại học của trường.
+
+Không giới hạn chỉ tiêu xét tuyển.
+
+Xét tuyển dựa vào kết quả kỳ thi tốt nghiệp THPT năm 2025:
+
+Thí sinh tham dự kỳ thi tốt nghiệp THPT năm 2025 và đăng ký sử dụng kết quả để xét tuyển đại học.
+
+Đủ điều kiện tốt nghiệp THPT theo quy định.
+
+Đạt ngưỡng điểm xét tuyển tối thiểu do Nhà trường quy định.
+
+Đối với ngành Ngôn ngữ Anh, điểm môn Tiếng Anh trong tổ hợp xét tuyển tối thiểu đạt từ 6,00 điểm trở lên.
+
+Xét tuyển dựa vào kết quả học tập bậc THPT (học bạ):
+
+Thí sinh đã tốt nghiệp THPT hoặc tương đương.
+
+Đạt ngưỡng điểm xét tuyển tối thiểu do Nhà trường quy định.
+
+Đối với ngành Ngôn ngữ Anh, điểm tổng kết các học kỳ xét tuyển môn Tiếng Anh đạt 7,00 điểm trở lên.
+
+Xét tuyển dựa vào kết quả kỳ thi đánh giá tư duy do Đại học Bách khoa Hà Nội tổ chức:
+
+Thí sinh có kết quả thi kỳ thi đánh giá tư duy do Đại học Bách khoa Hà Nội tổ chức trong thời gian không quá 2 năm.
+
+Đủ điều kiện tốt nghiệp THPT theo quy định.
+
+Xét tuyển dựa vào kết quả kỳ thi đánh giá năng lực do Đại học Quốc gia Hà Nội tổ chức:
+
+Thí sinh tham dự kỳ thi đánh giá năng lực năm 2025 do Đại học Quốc gia Hà Nội tổ chức.
+
+Đủ điều kiện tốt nghiệp THPT theo quy định.
+
+III. Cách tính điểm xét tuyển
+
+Điểm xét tuyển (ĐXT) được tính theo công thức:
+
+ĐXT = (ĐPT + KK) + UT
+
+Trong đó:
+
+ĐPT: Điểm tổ hợp xét tuyển (tùy theo phương thức xét tuyển).
+
+KK: Điểm khuyến khích (áp dụng cho thí sinh có chứng chỉ tiếng Anh quốc tế và thí sinh đăng ký xét tuyển tại cơ sở Nam Định).
+
+UT: Điểm ưu tiên khu vực và đối tượng theo Quy chế tuyển sinh của Bộ GD&ĐT.
 
 6. Mã ngành, tên ngành và tổ hợp xét tuyển năm 2025
 
