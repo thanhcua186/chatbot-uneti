@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Tuyển sinh UNETI</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    #chat { width: 100%; max-width: 600px; margin: auto; }
+    #messages { height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background: #fff; }
+    #userInput { width: 80%; padding: 8px; }
+    button { padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <div id="chat">
+    <h2>Trợ lý ảo tuyển sinh UNETI</h2>
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="Nhập câu hỏi..." />
+    <button onclick="send()">Gửi</button>
+  </div>
+
+  <script>
+    async function send() {
+      const input = document.getElementById("userInput");
+      const message = input.value;
+      document.getElementById("messages").innerHTML += `<div><b>Bạn:</b> ${message}</div>`;
+      input.value = "";
+
+      const res = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: message })
+      });
+
+      const data = await res.json();
+      document.getElementById("messages").innerHTML += `<div><b>Bot:</b> ${data.answer}</div>`;
+    }
+  </script>
+</body>
+</html>
