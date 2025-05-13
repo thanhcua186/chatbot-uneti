@@ -1,6 +1,7 @@
 import openai
 
-openai.api_key = "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"  # 🔑 Thay bằng API key thực
+import os
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def load_context():
     with open("data/thongbao.txt", "r", encoding="utf-8") as f:
